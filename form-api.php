@@ -28,11 +28,11 @@
 		die('Nada foi devolvido.');
 	}
 
-	//Retornar resultados
-	$result 			= 	unserialize($response);
-	$result_status 		= 	$result['status'];
-	$result_mensagem 	= 	$result['mensagemRetorno'];
+	//Caso haja a conexão exibir detalhes
+	$info = curl_getinfo($request);
+	print_r ($info);
 
-	echo $result_status . ' : ' . $result_mensagem;
+	//Retornar resultados
+	var_dump(json_decode($output, true));
 
 ?>
